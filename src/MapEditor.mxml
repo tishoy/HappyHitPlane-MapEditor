@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					   xmlns:s="library://ns.adobe.com/flex/spark" 
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   width="600" height="550" creationComplete="init()">
+	<fx:Script source="Main.as"/>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:Button id="AddPlane3" x="503" y="99" label="添加飞机"/>
+	<s:Button id="AddPlane1" x="504" y="39" label="添加飞机"/>
+	<s:Button id="AddPlane2" x="503" y="69" label="添加飞机"/>
+	<s:Label x="297" y="9" width="57" height="21" fontSize="20" text="名字"/>
+	<s:Label x="11" y="133" width="85" height="21" fontSize="20" text="计划步数"/>
+	<s:Label x="94" y="135" width="34" height="21" fontSize="18" text="1星"/>
+	<s:Label x="203" y="136" width="34" height="21" fontSize="18" text="2星"/>
+	<s:Label x="312" y="135" width="34" height="21" fontSize="18" text="3星"/>
+	<s:Label x="21" y="10" width="80" height="20" fontSize="20" text="地图ID"/>
+	<s:Label x="25" y="39" width="57" height="21" fontSize="20" text="飞机1"/>
+	<s:Label x="25" y="69" width="57" height="21" fontSize="20" text="飞机2"/>
+	<s:Label x="25" y="98" width="57" height="21" fontSize="20" text="飞机3"/>
+	<s:Label x="297" y="37" width="57" height="21" fontSize="20" text="方向1"/>
+	<s:Label x="297" y="67" width="57" height="21" fontSize="20" text="方向2"/>
+	<s:Label x="297" y="97" width="57" height="21" fontSize="20" text="方向3"/>
+	<s:TextInput id="Plane1" x="104" y="40"/>
+	<s:TextInput id="MapID" x="104" y="10"/>
+	<s:TextInput id="MapName" x="362" y="8"/>
+	<s:TextInput id="Step1" x="127" y="133" width="73"/>
+	<s:TextInput id="Step2" x="235" y="134" width="73"/>
+	<s:TextInput id="Step3" x="349" y="134" width="73"/>
+	<s:TextInput id="Plane2" x="104" y="68"/>
+	<s:TextInput id="Plane3" x="104" y="97"/>
+	<s:Label x="12" y="221" width="85" height="21" fontSize="20" text="其他道具"/>
+	<s:Label x="10" y="311" width="227" height="21" color="#FF0000" fontSize="20" text="输出状态：为空时再导出"/>
+	<s:Label x="11" y="194" width="85" height="21" fontSize="20" text="难易程度"/>
+	<s:Button id="OutputJson" x="167" y="425" label="导出map"/>
+	<s:Button id="NewMap" x="430" y="135" label="刷新"/>
+	<s:Button id="InputJson" x="167" y="496" label="导入map"/>
+	<s:Button id="Scan0" x="168" y="395" label="浏览"/>
+	<s:Button id="Scan1" x="168" y="463" label="浏览"/>
+	<s:Button id="LightAll" x="504" y="134" label="全部翻转"/>
+	<s:TextArea id="Others" x="102" y="222" width="135" height="84"/>
+	<s:DropDownList id="HardList" x="112" y="194" requireSelection="true" dataProvider="{hardData}" labelField="name" enabled="true"></s:DropDownList>
+	<s:DropDownList id="Direction3" x="371" y="99" requireSelection="true" dataProvider="{direcitionData}" labelField="name" enabled="true"></s:DropDownList>
+	<s:DropDownList id="Direction1" x="371" y="38" requireSelection="true" dataProvider="{direcitionData}" labelField="name" enabled="true"></s:DropDownList>
+	<s:DropDownList id="Direction2" x="371" y="68" requireSelection="true" dataProvider="{direcitionData}" labelField="name" enabled="true"></s:DropDownList>
+	<s:Image id="grid_0" x="245" y="196" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_1" x="283" y="196" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_2" x="321" y="196" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_3" x="359" y="196" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_4" x="397" y="196" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_5" x="435" y="196" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_6" x="473" y="196" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_7" x="511" y="196" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_8" x="549" y="196" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_9" x="245" y="234" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_10" x="283" y="234" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_11" x="321" y="234" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_12" x="359" y="234" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_13" x="397" y="234" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_14" x="435" y="234" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_15" x="473" y="234" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_16" x="511" y="234" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_17" x="549" y="234" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_18" x="245" y="272" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_19" x="283" y="272" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_20" x="321" y="272" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_21" x="359" y="272" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_22" x="397" y="272" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_23" x="435" y="272" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_24" x="473" y="272" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_25" x="511" y="272" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_26" x="549" y="272" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_27" x="245" y="310" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_28" x="283" y="310" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_29" x="321" y="310" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_30" x="359" y="310" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_31" x="397" y="310" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_32" x="435" y="310" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_33" x="473" y="310" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_34" x="511" y="310" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_35" x="549" y="310" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_36" x="245" y="349" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_37" x="283" y="349" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_38" x="321" y="349" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_39" x="359" y="349" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_40" x="397" y="349" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_41" x="435" y="349" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_42" x="473" y="349" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_43" x="511" y="349" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_44" x="549" y="349" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_45" x="245" y="387" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_46" x="283" y="387" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_47" x="321" y="387" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_48" x="359" y="387" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_49" x="397" y="387" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_50" x="435" y="387" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_51" x="473" y="387" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_52" x="511" y="387" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_53" x="549" y="387" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_54" x="245" y="425" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_55" x="283" y="425" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_56" x="321" y="425" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_57" x="359" y="425" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_58" x="397" y="425" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_59" x="435" y="425" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_60" x="473" y="425" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_61" x="511" y="425" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_62" x="549" y="425" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_63" x="245" y="463" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_64" x="283" y="463" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_65" x="321" y="463" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_66" x="359" y="463" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_67" x="397" y="463" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_68" x="435" y="463" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_69" x="473" y="463" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_70" x="511" y="463" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_71" x="549" y="463" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_72" x="245" y="501" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_73" x="283" y="501" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_74" x="321" y="501" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_75" x="359" y="501" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_76" x="397" y="501" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_77" x="435" y="501" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_78" x="473" y="501" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_79" x="511" y="501" width="30" height="30" source="assets/status.jpg"/>
+	<s:Image id="grid_80" x="549" y="501" width="30" height="30" source="assets/status.jpg"/>
+	<s:ComboBox id="JSONInput" x="10" y="464"/>
+	<s:ComboBox id="JSONOutput" x="11" y="395"/>
+	<s:TextArea id="ErrorOutput" x="12" y="340" width="212" height="39" color="#FF0000"
+				editable="false"/>
+	<s:Button id="leftRotate" x="430" y="165" label="左旋"/>
+	<s:Button id="rightRotate" x="507" y="165" label="右旋"/>
+</s:WindowedApplication>
